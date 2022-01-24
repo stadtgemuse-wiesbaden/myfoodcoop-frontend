@@ -6,5 +6,3 @@ export const getUrl = () => process.env.NODE_ENV === 'development'
     : get(backendUrl) ;
 
 export const version = 'v2';
-
-export const appVersion = process.env.APP_VERSION;
