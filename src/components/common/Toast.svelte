@@ -27,7 +27,7 @@
 <style>
     .toast {
         background-color: #00d1b2;
-        box-shadow: 0 1em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+        box-shadow: 0 1em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
         position: fixed;
         padding: 10px;
         border-radius: 5px;

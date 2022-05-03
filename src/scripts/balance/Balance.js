@@ -15,6 +15,7 @@ export default class Balance {
 
     /**
      * Request to the API to set the balance to the specified value
+     * @param {string} userId the ID of the desired user
      * @param {number} newBalance value the balance should be set to
      * @returns {number} current balance
      */
@@ -32,6 +33,7 @@ export default class Balance {
 
     /**
      * Request to the API to topup the balance with the specified value
+     * @param {string} userId the ID of the desired user
      * @param {number} topupAmount value to add on top of balance
      * @returns {number} current balance
      */
@@ -49,6 +51,7 @@ export default class Balance {
 
     /**
      * Request to the API to withdraw the balance with the specified value
+     * @param {string} userId the ID of the desired user
      * @param {number} withDrawAmount value to subtract from the balance
      * @returns {number} current balance
      */
@@ -74,7 +77,7 @@ export default class Balance {
     */
     static async getHistory(userId, fromDate, toDate, offset, limit) {
         const url = `balance/${userId}/history`;
-        const params = `fromDate=${fromDate}&toDate=${toDate}&offset=${offset}&limit=${limit}`
+        const params = `fromDate=${fromDate}&toDate=${toDate}&offset=${offset}&limit=${limit}`;
 
         return Fetch.get(`${url}?${params}`, getAuthorizationHeader());
     }

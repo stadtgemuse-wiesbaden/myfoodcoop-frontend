@@ -1,10 +1,12 @@
 <script>
+    import { ErrorTranslation } from '../../scripts/api/CustomError';
     /**
      * Error to be displayed in a modal
      */
     export let error;
 
     let isActive = false;
+    const errorText = ErrorTranslation;
 
     // Necessary in order to display a more detailed error in dev mode
     const isInDevMode = process.env.NODE_ENV === 'development';
@@ -35,7 +37,7 @@
         <section class="modal-card-body">
             {#if error && error.errorCode && error.message}
                 <!-- Show the error code for everyone -->
-                <p>Fehlercode: {error.errorCode}</p>
+                <p>Fehler: {errorText(error.errorCode)}</p>
 
                 {#if isInDevMode}
                     <!-- If we are in dev mode, display more details for the developer -->

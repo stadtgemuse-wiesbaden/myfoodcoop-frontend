@@ -46,7 +46,7 @@ export default class Fetch {
     /**
      * Sends a PATCH request to the api
      * @param {string} subpath Path relativ to the version number of the api
-     * @param {string} content Body content which should be send to the api
+     * @param {{balance: number}} content Body content which should be send to the api
      * @param {object} additionalHeaders Additional header parameters (optional)
      * @returns The JSON response of the request
      */
@@ -57,6 +57,7 @@ export default class Fetch {
     /**
      * Sends a DELETE request to the api
      * @param {string} subpath Path relativ to the version number of the api
+     * @param {{balance: number}} content Body content which should be send to the api
      * @param {object} additionalHeaders Additional header parameters (optional)
      * @returns The JSON response of the request
      */
@@ -82,7 +83,7 @@ export default class Fetch {
             if ((get(isPointOfSales) || get(keepLoggedIn)) && get(tokenExpires) < Date.now() && get(refreshTokenStore) 
                 && get(refreshTokenExpires) > Date.now()) {
                 // get a new token
-                await Fetch.refreshToken(get(refreshTokenStore))
+                await Fetch.refreshToken(get(refreshTokenStore));
 
                 // update the token of the current request
                 headers[Headers.Authorization] = `Bearer ${get(token)}`;
