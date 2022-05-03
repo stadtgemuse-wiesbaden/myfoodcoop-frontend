@@ -31,6 +31,8 @@
      */
     export let isLoading = false;
 
+    export let highlightBackground = '';
+
     /**
      * Defines if the items should be highlighted
      * Default: false
@@ -103,7 +105,12 @@
     <Loader bind:isLoading />
 {:else if stockItems && stockItems.length > 0}
     {#each stockItems.slice(offset, offset + pageSize) as item}
-        <ListItem isClickable={isClickable} highlight={highlight} on:click={(event) => selectItem(event, item.id)}>
+        <ListItem
+            isClickable={isClickable}
+            highlight={highlight}
+            on:click={(event) => selectItem(event, item.id)}
+            highlightBackground={highlightBackground}
+        >
             <!--First column with item name, buttons, stock quantity and price -->
             <div class="columns m-0 is-mobile">
                 {#if allowDetails}

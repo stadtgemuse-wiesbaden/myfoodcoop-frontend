@@ -17,6 +17,8 @@
      * Default: false
      */
     export let highlight = false;
+
+    export let highlightBackground = '';
 </script>
 
 <style>
@@ -41,8 +43,29 @@
     .is-clickable {
         cursor: pointer;
     }
+    div {
+        background-color: aquamarin;
+    }
+    .bg-highlight-out-of-stock {
+        background-color: tomato;
+    }
+    .bg-highlight-in-stock {
+        background-color: lightseagreen;
+    }
+    .bg-highlight-ordered {
+        background-color: cornflowerblue;
+    }
+    .bg-highlight-spoiled-soon {
+        background-color: gold;
+    }
 </style>
 
-<div class="list-item" class:is-clickable={isClickable} class:highlight class:small={size === 'small'} on:click>
+<div
+    class="list-item {highlightBackground}"
+    class:is-clickable={isClickable}
+    class:highlight
+    class:small={size === 'small'}
+    on:click
+>
     <slot />
 </div>

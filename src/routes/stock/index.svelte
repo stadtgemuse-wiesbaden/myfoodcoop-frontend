@@ -60,6 +60,7 @@
                 on:select={onSelectItem}
                 isClickable={true}
                 highlight
+                highlightBackground="bg-highlight-spoiled-soon"
             />
 
             <hr />
@@ -74,6 +75,7 @@
                 on:details={onSelectItem}
                 on:select={onSelectItem}
                 isClickable={true}
+                highlightBackground="bg-highlight-in-stock"
             />
             <hr />
         {/if}
@@ -87,6 +89,7 @@
                 on:details={onSelectItem}
                 on:select={onSelectItem}
                 isClickable={true}
+                highlightBackground="bg-highlight-ordered"
             />
             <hr />
         {/if}
@@ -101,6 +104,7 @@
                     on:details={onSelectItem}
                     on:select={onSelectItem}
                     isClickable={true}
+                    highlightBackground="bg-highlight-out-of-stock"
                 />
                 <hr />
             {/if}
