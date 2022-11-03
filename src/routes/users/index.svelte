@@ -126,9 +126,9 @@
     {:else}
         <!-- Display all users that match the search term -->
         {#each allUsers as user}
-            {#if user.username
-                .toLocaleUpperCase()
-                .includes(searchTerm.toLocaleUpperCase()) || user.memberId.toString().includes(searchTerm)}
+            {#if user.username.toLocaleUpperCase().includes(searchTerm.toLocaleUpperCase()) || user.memberId
+                    .toString()
+                    .includes(searchTerm)}
                 <UserListItem user={user} on:click={() => goto(`/users/${user.id}`)} />
             {/if}
         {/each}

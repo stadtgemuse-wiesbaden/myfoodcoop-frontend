@@ -108,7 +108,8 @@
     on:mousemove={userInteraction}
     on:keydown={userInteraction}
     on:scroll={userInteraction}
-    on:pointerdown={userInteraction} />
+    on:pointerdown={userInteraction}
+/>
 
 <BulmaGlobalStyles />
 <EnsureLogin bind:isLoggedIn />
