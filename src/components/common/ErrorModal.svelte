@@ -48,7 +48,7 @@
                     </div>
                 {:else}
                     <!-- Show a generic error in production -->
-                    <p>Bitte kontaktieren Sie mit dem Fehlercode den Betreiber der Seite</p>
+                    <p>Bitte kontaktieren Sie mit dem Fehlercode {error.errorCode} den Betreiber der Seite</p>
                 {/if}
             {:else if isInDevMode && error !== undefined}
                 <!-- Show the error, if we are in dev mode and the error is not from our api -->
